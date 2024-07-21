@@ -1,0 +1,74 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #c7d2fe;
+}
+
+h1 {
+    text-align: center;
+}
+
+.show-dialog {
+    display: block;
+    margin: 0 auto;
+    background-color: #22c55e;
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.show-dialog:hover {
+    background-color: #16a34a;
+}
+
+form input, form label {
+    margin: 5px;
+}
+
+input#title, input#author, input#pages {
+    width: 95%;
+}
+
+dialog .close-dialog {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
+
+form button {
+    margin: 5px;
+}
+
+#library {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 10px;
+}
+
+.book {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding-bottom: 8px;
+}
+
+button.remove {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+

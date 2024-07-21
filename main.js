@@ -15,7 +15,21 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(newBook);
 }
 
+// For the dialog section
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector(".show-dialog");
+const closeButton = document.querySelector(".close-dialog");
 
+// "Show the dialog" button opens the dialog modally
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+// "Close" button closes the dialog
+closeButton.addEventListener("click", () => {
+  dialog.close();
+  document.getElementById('bookForm').reset();
+});
 
 // Displays the book input in the page
 function displayLibrary() {
