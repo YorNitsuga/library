@@ -9,6 +9,10 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.toggleReadStatus = function() {
+  this.read = !this.read;
+};
+
 // Takes user's input and stores it into the storage/array
 function addBookToLibrary(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
@@ -44,6 +48,8 @@ function displayLibrary() {
         <p>Author: ${book.author}</p>
         <p>Pages: ${book.pages}</p>
         <p>Read: ${book.read ? 'Yes' : 'No'}</p>
+        <button class="on-read" onclick="toggleReadStatus(${index})">Mark as ${book.read ? 'Unread' : 'Read'}</button>
+        <br>
         <button class="remove" onclick="removeBook(${index})">Remove</button>
       `;
       libraryContainer.appendChild(bookDiv);
@@ -74,3 +80,9 @@ document.getElementById('bookForm').addEventListener('submit', function(event) {
     document.getElementById('bookForm').reset();
     dialog.close();
   });
+
+  function toggleReadStatus(index) {
+    myLibrary[index].toggleReadStatus();
+    displayLibrary();
+  }
+  
